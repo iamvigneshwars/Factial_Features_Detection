@@ -18,10 +18,10 @@ while True:
         y2 = face.bottom()
        # cv2.rectangle(frame, (x1,y1), (x2,y2), (0,255,0),3)
         landmarks = predictor(gray, face)
-        
-        x = landmarks.part(0).x
-        y = landmarks.part(0).y
-        cv2.circle(frame, (x,y), 3, (255, 0, 0), -1)
+    for n in range(0, 68):        
+            x = landmarks.part(n).x
+            y = landmarks.part(n).y
+            cv2.circle(frame, (x,y), 3, (255, 0, 0), -1)
 
     cv2.imshow("Frame", frame)
 
